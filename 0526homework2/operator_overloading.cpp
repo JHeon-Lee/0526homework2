@@ -2,7 +2,6 @@
 
 using namespace std;
 
-#pragma region 단항 연산자
 class Vector
 {
 public:
@@ -15,6 +14,7 @@ public:
 		return out;
 	}
 
+#pragma region 단항 연산자
 	// 단항 +
 	Vector operator+()
 	{
@@ -27,7 +27,9 @@ public:
 	{
 		return Vector{ -x, -y, -z };
 	}
+#pragma endregion
 
+#pragma region 이항 연산자
 	// 이항 + Vector
 	Vector operator+(const Vector& rhs)
 	{
@@ -57,7 +59,9 @@ public:
 	{
 		return Vector{ x * rhs,y * rhs,z * rhs };
 	}
+#pragma endregion
 
+#pragma region 증감 연산자
 	// 전위 증가
 	Vector& operator++()
 	{
@@ -97,6 +101,7 @@ public:
 		z -= 1;
 		return temp;
 	}
+#pragma endregion
 
 private:
 	int x;
